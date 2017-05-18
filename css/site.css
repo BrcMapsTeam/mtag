@@ -1,8 +1,9 @@
 ﻿body {
-    font-family: Verdana, sans-serif;
+    font-family: 'Khula', sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
+    font-size:20px;
 }
 
 .mtag{
@@ -12,11 +13,11 @@
 #mtagInput{
     text-align: left;
     width: 300px;
-    height: 2em;
-    font-size: 30px;
+    height: 60px;
+    font-size: 1.2em;
     border: grey solid 2px;
     background-image: url(/images/searchicon.png);
-    background-position: 10px 0.7em;
+    background-position: 10px 20px;
     background-repeat: no-repeat;
     padding-left: 42px;
 }
@@ -39,7 +40,7 @@
     border: grey solid 2px;
     max-height: 500px;
     width: 90%;
-    max-width: 900px;
+    max-width: 600px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -103,4 +104,10 @@ iframe{
 
 footer{
     padding: 50px;
+}
+
+@media only screen and (min-width: 780px) {
+    body {
+        font-size:18px;
+    }
 }
