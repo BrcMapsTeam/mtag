@@ -47,8 +47,9 @@ function renderHTML(data) {
             htmlString += "<li><p class='acronym'>" +c[1] + "</p><br />" + c[2] + "<p>" + c[3] + "<br /><a href='" + c[4] + "'>" + c[4] + "</a></p></li>";
         }
     })
-    htmlString += "</ul><p id='not-found' style='display:none'>Acronym not found, suggest it to us.</p>";
+    htmlString += "</ul><p id='not-found' style='display:none'>Acronym not found.<br /><a href='#SendnewAcronym'>Suggest it to us.</a></p>";
     document.getElementById("showdata").innerHTML = htmlString;
+    document.getElementById("input").innerHTML = '<input type="text" id="mtagInput" onkeyup="filtering()">';
 } /* If there is no Acronym, the text "Create a new one" will displayed therefore didyoufindit != "yes"  */
 
 
