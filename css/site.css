@@ -21,7 +21,7 @@
     padding: 10px;
 }
 
-.search-btn{
+#reset-btn{
     height: 50px;
     width: 80px;
     border-radius: 3px;
@@ -30,19 +30,12 @@
     font-size: 14px;
 }
 
-#reset-btn{
-    height: 30px;
-    width: 80px;
-    border-radius: 3px;
-    margin: 10px;
-    border: none;
-}
-
 #showdata{
     margin: auto;
     border: grey solid 2px;
-    max-height: 400px;
-    max-width: 500px;
+    max-height: 500px;
+    width: 90%;
+    max-width: 900px;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -102,4 +95,8 @@ iframe{
     width: 90%;
     max-width: 900px;
     height: 700px;
+}
+
+.field{
+
 }
