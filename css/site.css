@@ -37,7 +37,8 @@
 #showdata{
     margin: 10px;
     border: grey solid 2px;
-
+    max-height: 400px;
+    overflow: auto;
 }
 
 h1{
