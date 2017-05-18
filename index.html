@@ -5,33 +5,33 @@
     <title>MTAG</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="shortcut icon" href="images/searchicon.png">
     <link rel="stylesheet" href="css/site.css" />
     <!--[if lte IE 9]> This website is does not support Internet Explorer 9. <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Khula" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
     <!-- Search -->
     <header id="search">
-
+        <div class="page-title">
+            <h1>MTAG</h1>
+        </div>
         <div class="mtag">
-            <div class="page-title">
-                <h1>MTAG</h1>
-            </div>
             <form>
-                <input type="reset" id="reset-btn" value="Reset">
-                <div class="input">
-                    <input type="text" id="mtagInput" onkeyup="myFunction()">
+                <div id="input">
+
                 </div>
+                <input type="reset" id="reset-btn" value="Clear">
             </form>
-            <input type="button" id="btn" value="Search" class="search-btn">
-            <p id="showdata"></p>
+            <div id="showdata"></div>
         </div>
 
         <nav>
-                <div><a href="#SendnewAcronym">Add New Acronym</a></div>
-                <div><a href="#CreateaAcronym">Generate Acronym</a></div>
-                <div><a href="#contact">Contact</a></div>
+            <div><a href="#SendnewAcronym">Add New Acronym</a></div>
+            <!--<div><a href="#CreateaAcronym">Generate Acronym</a></div>-->
+            <div><a href="#contact">Contact</a></div>
         </nav>
     </header>
 
@@ -41,13 +41,12 @@
         <article id="SendnewAcronym">
             <h1 class="major">Add Acronym</h1>
             <!--<span class="image main"><img src="images/Create a new Acronym.png" alt="" /></span>-->
-            <p> Click on the link and send your new Acronym</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLScFFdvvVIHZyv52iGSyyJPcO3j4d4fKWUKrfAxk7Hmw15ei1A/viewform?c=0&w=1" target="_blank">Create a new Acronym</a>
+            <p>Heard some mystifying acronym you can't find? Fill in the form below to tell us about it...</p>
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScFFdvvVIHZyv52iGSyyJPcO3j4d4fKWUKrfAxk7Hmw15ei1A/viewform?c=0&w=1" target="_blank">Create a new Acronym</iframe>
         </article>
         <!-- Create a Acronym -->
-        <article id="CreateaAcronym">
+        <!--<article id="CreateaAcronym">
             <h1 class="major">Generate Acronym</h1>
-            <!--<span class="image main"><img src="images/pic03.jpg" alt="" /></span>-->
             <p>Write with a line distant your word which you want create</p>
             <div id="app">
                 <div id="input">
@@ -74,41 +73,24 @@
                 </div>
             </div>
 
-        </article>
+        </article>-->
 
         <!-- Contact -->
         <article id="contact">
             <h1 class="major">Contact</h1>
-            <form method="post" action="#">
-                <div class="field half first">
-                    <label for="name">Name</label>
-                    <input type="text" name="name" id="name" />
-                </div>
-                <div class="field half">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" id="email" />
-                </div>
-                <div class="field">
-                    <label for="message">Message</label>
-                    <textarea name="message" id="message" rows="4"></textarea>
-                </div>
-                <ul class="actions">
-                    <li><input type="submit" value="Send Message" class="special" /></li>
-                    <li><input type="reset" value="Reset" /></li>
-                </ul>
-            </form>
-            <ul class="icons">
-                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-                <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
-            </ul>
+            <p>brcmapsteam [-at-] gmail.com</p>
+            <div class="icons">
+                <!--<div><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></div>
+                <div><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></div>
+                <div><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></div>-->
+                <div><a href="https://github.com/BrcMapsTeam/MTAG" class="icon fa-github"><span class="label">GitHub</span></a></div>
+            </div>
         </article>
 
 
         <!-- Footer -->
         <footer id="footer">
-            <p class="copyright">&copy; British Red Cross</p>
+            Created by BRC Maps Team
         </footer>
 
     </div>

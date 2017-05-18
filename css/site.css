@@ -1,23 +1,32 @@
 ﻿body {
-    font-family: Verdana, sans-serif;
+    font-family: 'Khula', sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
+    font-size:20px;
+}
+
+.mtag{
+    padding: 30px;
 }
 
 #mtagInput{
     text-align: left;
     width: 300px;
-    height: 2em;
-    font-size: 30px;
+    height: 60px;
+    font-size: 1.2em;
     border: grey solid 2px;
+    background-image: url(/images/searchicon.png);
+    background-position: 10px 20px;
+    background-repeat: no-repeat;
+    padding-left: 42px;
 }
 
 #other{
-    padding: 10px;
+    padding: 20px;
 }
 
-.search-btn{
+#reset-btn{
     height: 50px;
     width: 80px;
     border-radius: 3px;
@@ -26,18 +35,19 @@
     font-size: 14px;
 }
 
-#reset-btn{
-    height: 30px;
-    width: 80px;
-    border-radius: 3px;
-    margin: 10px;
-    border: none;
+#showdata{
+    margin: auto;
+    border: grey solid 2px;
+    max-height: 500px;
+    width: 90%;
+    max-width: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
-#showdata{
-    margin: 10px;
-    border: grey solid 2px;
-
+#showdata ul{
+        max-width: 500px;
+        padding: 0;
 }
 
 h1{
@@ -67,4 +77,37 @@ nav div{
 
 a{
     text-decoration: none;
+}
+
+.acronym{
+    color: white;
+    background-color: grey;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+}
+
+#not-found{
+    line-height: 2em;
+}
+
+#not-found a{
+    padding: 10px;
+}
+
+iframe{
+    width: 90%;
+    max-width: 900px;
+    height: 700px;
+}
+
+footer{
+    padding: 50px;
+}
+
+@media only screen and (min-width: 780px) {
+    body {
+        font-size:18px;
+    }
 }
