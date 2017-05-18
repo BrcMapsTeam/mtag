@@ -1,0 +1,70 @@
+﻿body {
+    font-family: Verdana, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+#mtagInput{
+    text-align: left;
+    width: 300px;
+    height: 2em;
+    font-size: 30px;
+    border: grey solid 2px;
+}
+
+#other{
+    padding: 10px;
+}
+
+.search-btn{
+    height: 50px;
+    width: 80px;
+    border-radius: 3px;
+    border: none;
+    margin: 10px;
+    font-size: 14px;
+}
+
+#reset-btn{
+    height: 30px;
+    width: 80px;
+    border-radius: 3px;
+    margin: 10px;
+    border: none;
+}
+
+#showdata{
+    margin: 10px;
+    border: grey solid 2px;
+
+}
+
+h1{
+    font-weight: 300;
+    color: #333399;
+}
+
+.page-title{
+    background-color: #333399;
+    margin: 0;
+    padding: 1em;
+}
+
+.page-title h1{
+    color: white;
+}
+
+ul{
+    list-style-type:none;
+    text-align:center;
+    margin: auto;
+}
+
+nav div{
+    padding: 10px;
+}
+
+a{
+    text-decoration: none;
+}

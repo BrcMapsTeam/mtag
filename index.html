@@ -1,489 +1,122 @@
-<!DOCTYPE HTML>
-<!--
-    Dimension by HTML5 UP
-    html5up.net | @ajlkn
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-    -->
+﻿<!DOCTYPE HTML>
+
 <html>
-    <head>
-        <title>Acronym Search</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="assets/css/main.css" />
-        <!--[if lte IE 9]> <link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>		
-    </head>
-    <body>
-        <!-- Wrapper -->
-        <div id="wrapper">
-        <!-- Header -->
-        <header id="header">
-            <!--<div class="logo">
-                <span class="icon fa-diamond"></span>
-                </div> -->
-            <div class="content">
-                <div class="inner">
-                    <h1>Acronym search</h1>
-                    <p id="demo"></p>
-                    <form>
-                        <input type="reset" style="float: right" value="Reset">
-                        <div style="overflow: hidden; padding-right: .5em;">
-                            <input type="text" id="myInput" oninput="myFunction()" style="text-align: center;width: 100%;" placeholder="ACRONYM UPPERCASE LETTER">
-                        </div>
-                    </form>
-                    <input type ="button" id="btn" value="Search" class="special">
-			<p id="showdata"></p>
-                </div>
+<head>
+    <title>MTAG</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="css/site.css" />
+    <!--[if lte IE 9]> This website is does not support Internet Explorer 9. <![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <!-- Search -->
+    <header id="search">
+
+        <div class="mtag">
+            <div class="page-title">
+                <h1>MTAG</h1>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#Acronym">Acronym</a></li>
-                    <li><a href="#SendnewAcronym">Send new Acronym</a></li>
-                    <li><a href="#CreateaAcronym">Create Acronym</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <!--<li><a href="#elements">Elements</a></li>-->
-                </ul>
-            </nav>
-        </header>
-        <!-- Main -->
-        <div id="main">
-        <!-- Acronym -->
-        <article id="Acronym">
-            <h1 class="major">Acronym</h1>
-            <span class="image main"><img src="images/AcronymRedCross.png" alt="" /></span> 
-            <p>An acronym is a word or name formed as an abbreviation from the initial components in a phrase or a word, usually individual letters and sometimes syllables.</p>
-	    <a href="https://en.wikipedia.org/wiki/Acronym" target="_blank">Wikipedia Acronym</a>
-        </article>
+            <form>
+                <input type="reset" id="reset-btn" value="Reset">
+                <div class="input">
+                    <input type="text" id="mtagInput" onkeyup="myFunction()">
+                </div>
+            </form>
+            <input type="button" id="btn" value="Search" class="search-btn">
+            <p id="showdata"></p>
+        </div>
+
+        <nav>
+                <div><a href="#SendnewAcronym">Add New Acronym</a></div>
+                <div><a href="#CreateaAcronym">Generate Acronym</a></div>
+                <div><a href="#contact">Contact</a></div>
+        </nav>
+    </header>
+
+    <!-- Other functionalities -->
+    <div id="other">
         <!-- Send new Acronym -->
         <article id="SendnewAcronym">
             <h1 class="major">Add Acronym</h1>
-            <span class="image main"><img src="images/Create a new Acronym.png" alt="" /></span>
+            <!--<span class="image main"><img src="images/Create a new Acronym.png" alt="" /></span>-->
             <p> Click on the link and send your new Acronym</p>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLScFFdvvVIHZyv52iGSyyJPcO3j4d4fKWUKrfAxk7Hmw15ei1A/viewform?c=0&w=1" target="_blank">Create a new Acronym</a>
         </article>
         <!-- Create a Acronym -->
         <article id="CreateaAcronym">
-        <h1 class="major">Create Acronym</h1>
-        <span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-        <p>Write with a line distant your word which you want create</p>
-        <div id="app">
-            <div id="input">
-                <form>
-                    <div>
-                        <label for="words">Words</label>
-                        <textarea id="words" placeholder="Enter each word on a separate line">
-                       	British
-                        Red
-                        Cross
-                        </textarea>
-                    </div>
-                    <div>
-                        <button type="button" id="generate_acronyms">Generate Acronyms</button>
-                    </div>
-                </form>
-           </div>
-            <div>
-                <ul id="candidate_words"></ul>
-                <button type="button" id="generate_acronyms2">Generate Acronyms</button>
+            <h1 class="major">Generate Acronym</h1>
+            <!--<span class="image main"><img src="images/pic03.jpg" alt="" /></span>-->
+            <p>Write with a line distant your word which you want create</p>
+            <div id="app">
+                <div id="input">
+                    <form>
+                        <div>
+                            <label for="words">Words</label>
+                            <textarea id="words" placeholder="Enter each word on a separate line">
+                                British
+                                Red
+                                Cross
+                            </textarea>
+                        </div>
+                        <div>
+                            <button type="button" id="generate_acronyms">Generate Acronyms</button>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <ul id="candidate_words"></ul>
+                    <button type="button" id="generate_acronyms2">Generate Acronyms</button>
+                </div>
+                <div>
+                    <ul id="candidate_acronyms"></ul>
+                </div>
             </div>
-            <div>
-                <ul id="candidate_acronyms"></ul>
-            </div>
-        </div>
-        <script type="application/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.0.0/lodash.min.js"></script>
-        <script type="application/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
-        <script type="text/javascript">
-            function permute(input) {
-                var permArr = [],
-                        usedChars = [];
-                function permute_recursive(input) {
-                    var i, ch;
-                    for (i = 0; i < input.length; i++) {
-                        ch = input.splice(i, 1)[0];
-                        usedChars.push(ch);
-                        if (input.length == 0) {
-                            permArr.push(usedChars.slice());
-                        }
-                        permute_recursive(input);
-                        input.splice(i, 0, ch);
-                        usedChars.pop();
-                    }
-                    return permArr
-                }
-                return permute_recursive(input);
-            }
-            function generate_word_list() {
-                var words = $('#words').val();
-                words = words.split(/[\r\n]+/);
-                words = _.map(words, function (word) {
-                    word = _.trim(word);
-                    if (word.length > 0) {
-                        word = word.charAt(0).toUpperCase() + word.slice(1);
-                    }
-                    return word;
-                });
-                words = _.filter(words, function (word) {
-                    return !_.isEmpty(word);
-                });
-                words = _.uniq(words);
-                words.sort();
-                console.log(words);
-                var wordList = $('#candidate_words');
-                wordList.html('');
-                var wordListItems = [];
-                _.each(words, function (word) {
-                    var wordListItem = $('<li>' +
-                            '<label>' +
-                            '<input type="checkbox" ' +
-                            'name="candidate_words" ' +
-                            'data-candidate-word="'
-                            + word
-                            + '"/>'
-                            + word
-                            + '</label>' +
-                            '</li>');
-                    wordListItem.find('input').prop('checked', true);
-                    wordListItems.push(wordListItem);
-                });
-                wordList.append(wordListItems);
-            }
-            function generate_acronyms() {
-                var candidateWords = [];
-                $('#candidate_words').find('input:checked').each(function () {
-                    candidateWords.push($(this).data('candidate-word'));
-                });
-                console.log(candidateWords);
-                var permuations = permute(candidateWords);
-                console.log(permuations);
-                var acronymList = $('#candidate_acronyms');
-                acronymList.html('');
-                var acronymListItems = [];
-                _.each(permuations, function (permuation) {
-                    var acronym = _.map(permuation, function (word) {
-                        return word.charAt(0);
-                    }).join('');
-                    var name = permuation.join(' ');
-                    var acronymListItem = $('<li>' +
-                            '<label>' +
-                            '<input type="checkbox" ' +
-                            'name="candidate_acronym" ' +
-                            'data-candidate-acronym="'
-                            + acronym
-                            + '"/>'
-                            + '<b>' + acronym + '</b>' + ' - ' + name
-                            + '</label>' +
-                            '</li>');
-                    acronymListItem.find('input').prop('checked', true);
-                    acronymListItems.push(acronymListItem);
-                });
-                acronymList.append(acronymListItems);
-            }
-            $(document).ready(function () {
-                $('#generate_acronyms').click(function () {
-                    generate_word_list();
-                    generate_acronyms();
-                });
-                $('#generate_acronyms2').click(function () {
-                    generate_acronyms();
-                });
-            });
-        </script>
-								
-							</article>
 
-						<!-- Contact -->
-							<article id="contact">
-								<h1 class="major">Contact</h1>
-								<form method="post" action="#">
-									<div class="field half first">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field half">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="special" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</article>
-<!-- Elements -->
-							<article id="elements">
-								<h1 class="major">Elements</h1>
+        </article>
 
-								<section>
-									<h3 class="major">Text</h3>
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<h6>Heading Level 6</h6>
-									<hr />
-									<h4>Blockquote</h4>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h4>Preformatted</h4>
-									<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-    print 'Iteration ' + i;
-    deck.shuffle();
-    i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-								</section>
-
-								<section>
-									<h3 class="major">Lists</h3>
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-									</ul>
-
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button special">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions vertical">
-										<li><a href="#" class="button special">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Table</h3>
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</section>
-
-								<section>
-									<h3 class="major">Buttons</h3>
-									<ul class="actions">
-										<li><a href="#" class="button special">Special</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button special icon fa-download">Icon</a></li>
-										<li><a href="#" class="button icon fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button special disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</section>
-
-								<section>
-									<h3 class="major">Form</h3>
-									<form method="post" action="#">
-										<div class="field half first">
-											<label for="demo-name">Name</label>
-											<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-										</div>
-										<div class="field half">
-											<label for="demo-email">Email</label>
-											<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-										</div>
-										<div class="field">
-											<label for="demo-category">Category</label>
-											<div class="select-wrapper">
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-										</div>
-										<div class="field half first">
-											<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-											<label for="demo-priority-low">Low</label>
-										</div>
-										<div class="field half">
-											<input type="radio" id="demo-priority-high" name="demo-priority">
-											<label for="demo-priority-high">High</label>
-										</div>
-										<div class="field half first">
-											<input type="checkbox" id="demo-copy" name="demo-copy">
-											<label for="demo-copy">Email me a copy</label>
-										</div>
-										<div class="field half">
-											<input type="checkbox" id="demo-human" name="demo-human" checked>
-											<label for="demo-human">Not a robot</label>
-										</div>
-										<div class="field">
-											<label for="demo-message">Message</label>
-											<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="special" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</section>
-
-							</article>
-
-					</div>
+        <!-- Contact -->
+        <article id="contact">
+            <h1 class="major">Contact</h1>
+            <form method="post" action="#">
+                <div class="field half first">
+                    <label for="name">Name</label>
+                    <input type="text" name="name" id="name" />
+                </div>
+                <div class="field half">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" id="email" />
+                </div>
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" rows="4"></textarea>
+                </div>
+                <ul class="actions">
+                    <li><input type="submit" value="Send Message" class="special" /></li>
+                    <li><input type="reset" value="Reset" /></li>
+                </ul>
+            </form>
+            <ul class="icons">
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon fa-github"><span class="label">GitHub</span></a></li>
+            </ul>
+        </article>
 
 
-						
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-					</footer>
+        <!-- Footer -->
+        <footer id="footer">
+            <p class="copyright">&copy; British Red Cross</p>
+        </footer>
 
-			</div>
+    </div>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="main-acronym.js"></script>
 
-		<!-- BG -->
-			<div id="bg"></div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="main-acronym.js"></script>
-
-	</body>
+</body>
 </html>
