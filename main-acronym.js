@@ -46,8 +46,12 @@ function renderHTML(data) {
     var numberofdefinition = 0; /* Amount of same definition */
     var definition = []; /* Result array */
     console.log(data);
-    data.forEach(function(c, i){
-        htmlString += "<li>" + c[2] + "<p>" + c[3] + "<a href='" + c[4] + "'>" + c[4] + "</a></li>";
+    data.forEach(function (c, i) {
+        if (i == 0) {
+
+        } else {
+            htmlString += "<li><span>" +c[1] + "</span><br />" + c[2] + "<p>" + c[3] + "<br /><a href='" + c[4] + "'>" + c[4] + "</a></p></li>";
+        }
     })
     htmlString += "</ul>";
     document.getElementById("showdata").innerHTML = htmlString;

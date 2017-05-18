@@ -5,6 +5,10 @@
     padding: 0;
 }
 
+.mtag{
+    padding: 30px;
+}
+
 #mtagInput{
     text-align: left;
     width: 300px;
@@ -35,10 +39,18 @@
 }
 
 #showdata{
-    margin: 10px;
+    margin: auto;
     border: grey solid 2px;
     max-height: 400px;
-    overflow: auto;
+    max-width: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px;
+}
+
+#showdata ul{
+        max-width: 500px;
+        padding: 0;
 }
 
 h1{
