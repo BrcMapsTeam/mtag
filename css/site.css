@@ -15,6 +15,10 @@
     height: 2em;
     font-size: 30px;
     border: grey solid 2px;
+    background-image: url(/images/searchicon.png);
+    background-position: 10px 0.7em;
+    background-repeat: no-repeat;
+    padding-left: 42px;
 }
 
 #other{
@@ -97,6 +101,6 @@ iframe{
     height: 700px;
 }
 
-.field{
-
+footer{
+    padding: 50px;
 }
