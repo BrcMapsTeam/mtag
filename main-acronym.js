@@ -1,50 +1,44 @@
 var acronymContainer = document.getElementById("acronym-info");
 var btn = document.getElementById("btn");
+var data;
 var x;
 
 var call = $.ajax({ 
     type: 'GET', 
-    url: 'https://proxy.hxlstandard.org/data.json?force=on&url=https%3A//docs.google.com/spreadsheets/d/1LBQDNAi4EaD72FM5e4esmU30OxZbBcUgJPAgxNaM7G0/edit%23gid%3D1730333599&strip-headers=on',
+    url: 'https://proxy.hxlstandard.org/data.json?force=on&url=https%3A//docs.google.com/spreadsheets/d/1NZZwT%5FJIFthRlsG6QcTyj8wXMKpp2p6WGlKB6K3Gz50/edit%23gid%3D0&strip-headers=on&force=on',
     dataType: 'json',
 });
 
 
-$.when(call).then(function(data){
-    var ourData = JSON.parse(call.responseText);
-    renderHTML(ourData);
+$.when(call).then(function(a){
+    data = JSON.parse(call.responseText);
+    renderHTML(data);
 });
 
 
 function filtering() {
-    x = document.getElementById("mtagInput").value;
-
+    var didyoufindit; /* Create a new one */
+    var numberofdefinition = 0; /* Amount of same definition */
+    var definition = []; /* Result array */
+    x = document.getElementById("mtagInput");
+    li = document.getElementsByTagName("li");
+    x = x.value.toUpperCase();
     for (i = 1; i < data.length; i++) {
-        htmlString = data[i][1];
-
-        if (htmlString === x) {
-            definition[numberofdefinition] = "<p>" + data[i][2] + "<p>" + data[i][3] + "<a href='" + data[i][4] + "'><p>" + data[i][4] + "</a>";
-            numberofdefinition += 1; /* counts up if a another is found */
-            didyoufindit = "yes";
+            if (data[i][1].toUpperCase().indexOf(x) > -1) {
+                didyoufindit = "yes";
+                li[i-1].style.display = "";
+                document.getElementById("not-found").style.display = "none";
+            } else {
+                li[i-1].style.display = "none";
+            }
         }
-    }
-
-    var text = "";
-    for (i = 0; i < definition.length; i++) {
-        text += (i + 1) + "." + "Definition" + definition[i];
-    } /* Search for equal Definition" */
-
-    document.getElementById("showdata").innerHTML = text; /* Print the different definition */
-
     if (didyoufindit != "yes") {
-        document.getElementById("showdata").innerHTML = ("Create a new one"); /* Create a new one as a text */
+        document.getElementById("not-found").style.display = "";/* Create a new one as a text */
     }
 }
 
 function renderHTML(data) {
     var htmlString = "<ul>";
-    var didyoufindit; /* Create a new one */
-    var numberofdefinition = 0; /* Amount of same definition */
-    var definition = []; /* Result array */
     console.log(data);
     data.forEach(function (c, i) {
         if (i == 0) {
@@ -53,7 +47,7 @@ function renderHTML(data) {
             htmlString += "<li><p class='acronym'>" +c[1] + "</p><br />" + c[2] + "<p>" + c[3] + "<br /><a href='" + c[4] + "'>" + c[4] + "</a></p></li>";
         }
     })
-    htmlString += "</ul>";
+    htmlString += "</ul><p id='not-found' style='display:none'>Acronym not found, suggest it to us.</p>";
     document.getElementById("showdata").innerHTML = htmlString;
 } /* If there is no Acronym, the text "Create a new one" will displayed therefore didyoufindit != "yes"  */
 
