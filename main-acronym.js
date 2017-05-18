@@ -50,7 +50,7 @@ function renderHTML(data) {
         if (i == 0) {
 
         } else {
-            htmlString += "<li><span>" +c[1] + "</span><br />" + c[2] + "<p>" + c[3] + "<br /><a href='" + c[4] + "'>" + c[4] + "</a></p></li>";
+            htmlString += "<li><p class='acronym'>" +c[1] + "</p><br />" + c[2] + "<p>" + c[3] + "<br /><a href='" + c[4] + "'>" + c[4] + "</a></p></li>";
         }
     })
     htmlString += "</ul>";
