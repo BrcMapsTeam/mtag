@@ -1,5 +1,3 @@
-var acronymContainer = document.getElementById("acronym-info");
-var btn = document.getElementById("btn");
 var data;
 var x;
 
@@ -53,7 +51,10 @@ function renderHTML(data) {
 } /* If there is no Acronym, the text "Create a new one" will displayed therefore didyoufindit != "yes"  */
 
 
-
+document.getElementById("nav").onclick = function showMenu() {
+    document.getElementById("overlay").style.display = "";
+    document.getElementById("menu").style.display = "";
+}
 
 /*Generate acronym*/
 
