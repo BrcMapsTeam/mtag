@@ -56,6 +56,11 @@ document.getElementById("nav").onclick = function showMenu() {
     document.getElementById("menu").style.display = "";
 }
 
+document.getElementById("close-button").onclick = function closeMenu() {
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("menu").style.display = "none";
+}
+
 /*Generate acronym*/
 
 //function permute(input) {
