@@ -16,7 +16,7 @@
     height: 40px;
     font-size: 1.1em;
     border: grey solid 2px;
-    background-image: url("/images/searchicon.png");
+    background-image: url("../images/searchicon.png");
     background-position: 10px 10px;
     background-repeat: no-repeat;
     padding-left: 42px;
