@@ -132,6 +132,10 @@ footer{
     z-index: 10;
 }
 
+#menu div:first-child{
+    padding-top: 15%;
+}
+
 #menu svg{
     position: absolute;
     height:40px;
@@ -166,6 +170,15 @@ footer{
     stroke-width: 4;
     stroke-linecap: round;
     stroke-miterlimit: 10;
+}
+
+.menu-item{
+    font-size: 20px;
+    padding: 30px;
+}
+
+.menu-item:hover{
+    color:black;
 }
 
 @media only screen and (min-width: 780px) {

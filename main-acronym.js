@@ -56,10 +56,25 @@ document.getElementById("nav").onclick = function showMenu() {
     document.getElementById("menu").style.display = "";
 }
 
+function closeMenu() {
+    document.getElementById("overlay").style.display = "none";
+    document.getElementById("menu").style.display = "none";
+}
+
 document.getElementById("close-button").onclick = function closeMenu() {
     document.getElementById("overlay").style.display = "none";
     document.getElementById("menu").style.display = "none";
 }
+
+var menuItems = document.getElementsByClassName("menu-item");
+
+[].forEach.call(menuItems, function(c, i){
+    c.onclick = function closeMenu() {
+        document.getElementById("overlay").style.display = "none";
+        document.getElementById("menu").style.display = "none";
+    }
+})
+
 
 /*Generate acronym*/
 
