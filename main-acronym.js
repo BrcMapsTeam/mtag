@@ -49,7 +49,7 @@ function renderHTML(data) {
     })
     htmlString += "</ul><p id='not-found' style='display:none'>Acronym not found.<br /><a href='#SendnewAcronym'>Suggest it to us.</a></p>";
     document.getElementById("showdata").innerHTML = htmlString;
-    document.getElementById("input").innerHTML = '<input type="text" id="mtagInput" onkeyup="filtering()" placeholder="Type cryptic acronym here">';
+    document.getElementById("input").innerHTML = '<input type="text" id="mtagInput" onkeyup="filtering()" placeholder="Type acronym to filter">';
 } /* If there is no Acronym, the text "Create a new one" will displayed therefore didyoufindit != "yes"  */
 
 
