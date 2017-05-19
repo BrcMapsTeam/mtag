@@ -3,7 +3,7 @@
     text-align: center;
     margin: 0;
     padding: 0;
-    font-size:20px;
+    font-size:16px;
 }
 
 .mtag{
@@ -12,12 +12,12 @@
 
 #mtagInput{
     text-align: left;
-    width: 300px;
-    height: 60px;
-    font-size: 1.2em;
+    max-width: 300px;
+    height: 40px;
+    font-size: 1.1em;
     border: grey solid 2px;
     background-image: url("/images/searchicon.png");
-    background-position: 10px 20px;
+    background-position: 10px 10px;
     background-repeat: no-repeat;
     padding-left: 42px;
 }
@@ -58,7 +58,7 @@ h1{
 .page-title{
     background-color: #333399;
     margin: 0;
-    padding: 1em;
+    padding: 0.5em;
 }
 
 .page-title h1{
@@ -108,6 +108,6 @@ footer{
 
 @media only screen and (min-width: 780px) {
     body {
-        font-size:18px;
+        font-size:14px;
     }
 }

@@ -44,7 +44,7 @@ function renderHTML(data) {
         if (i == 0) {
 
         } else {
-            htmlString += "<li><p class='acronym'>" +c[1] + "</p><br />" + c[2] + "<p>" + c[3] + "<br /><a href='" + c[4] + "'>" + c[4] + "</a></p></li>";
+            htmlString += "<li><p class='acronym'>" +c[1] + "</p><p>" + c[2] + "</p><p>" + c[3] + "<br /><a href='" + c[4] + "'>" + c[4] + "</a></p></li>";
         }
     })
     htmlString += "</ul><p id='not-found' style='display:none'>Acronym not found.<br /><a href='#SendnewAcronym'>Suggest it to us.</a></p>";
