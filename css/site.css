@@ -7,7 +7,7 @@
 }
 
 .mtag{
-    padding: 30px;
+    padding: 15px 30px 30px 30px;
 }
 
 #mtagInput{
@@ -15,7 +15,8 @@
     max-width: 300px;
     height: 40px;
     font-size: 1.1em;
-    border: grey solid 2px;
+    border: #ccc solid 2px;
+    border-radius: 2px;
     background-image: url("../images/searchicon.png");
     background-position: 10px 10px;
     background-repeat: no-repeat;
@@ -37,7 +38,9 @@
 
 #showdata{
     margin: auto;
-    border: grey solid 2px;
+    margin-top: 20px;
+    border: #ccc solid 2px;
+    border-radius: 2px;
     max-height: 500px;
     width: 90%;
     max-width: 600px;
@@ -52,17 +55,19 @@
 
 h1{
     font-weight: 300;
-    color: #333399;
+    color: #1f8e89;
 }
 
 .page-title{
-    background-color: #333399;
+    background-color: #1f8e89;
     margin: 0;
     padding: 0.5em;
 }
 
 .page-title h1{
     color: white;
+    margin:10px;
+    letter-spacing: 15px;
 }
 
 ul{
@@ -81,7 +86,7 @@ a{
 
 .acronym{
     color: white;
-    background-color: grey;
+    background-color: #4f4f4f;
     width: 100%;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -100,6 +105,7 @@ iframe{
     width: 90%;
     max-width: 900px;
     height: 700px;
+    border-radius: 2px;
 }
 
 footer{
