@@ -3,12 +3,12 @@ var x;
 
 var call = $.ajax({ 
     type: 'GET', 
-    url: 'https://proxy.hxlstandard.org/data.json?force=on&url=https%3A//docs.google.com/spreadsheets/d/1NZZwT%5FJIFthRlsG6QcTyj8wXMKpp2p6WGlKB6K3Gz50/edit%23gid%3D0&strip-headers=on&force=on',
+    url: 'data.json',
     dataType: 'json',
 });
 
 
-$.when(call).then(function(a){
+$.when(call).then(function (a) {
     data = JSON.parse(call.responseText);
     renderHTML(data);
 });
