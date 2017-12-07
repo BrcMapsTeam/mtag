@@ -19,15 +19,16 @@ function filtering() {
     var numberofdefinition = 0; /* Amount of same definition */
     var definition = []; /* Result array */
     x = document.getElementById("mtagInput");
+    // Get all li tags
     li = document.getElementsByTagName("li");
     x = x.value.toUpperCase();
-    for (i = 1; i < data.length; i++) {
-            if (data[i][1].toUpperCase().indexOf(x) > -1) {
+    for (i = 2; i < data.length; i++) {
+        if (data[i][1].toUpperCase().indexOf(x) > -1) {
                 didyoufindit = "yes";
-                li[i-1].style.display = "";
+                li[i - 2].style.display = "";
                 document.getElementById("not-found").style.display = "none";
             } else {
-                li[i-1].style.display = "none";
+                li[i-2].style.display = "none";
             }
         }
     if (didyoufindit != "yes") {
@@ -37,9 +38,8 @@ function filtering() {
 
 function renderHTML(data) {
     var htmlString = "<ul>";
-    console.log(data);
     data.forEach(function (c, i) {
-        if (i == 0 || i==1) {
+        if (i == 0 || i == 1) {
 
         } else {
             htmlString += "<li><p class='acronym'>" + c[1].toUpperCase() + "</p><p>" + capitalizeFirstLetter(c[2]) + "</p><p>" + capitalizeFirstLetter(c[3]) + "<br /><a href='" + c[4] + "'>" + c[4] + "</a></p></li>";
