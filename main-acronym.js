@@ -3,7 +3,7 @@ var x;
 
 var call = $.ajax({ 
     type: 'GET', 
-    url: 'data.json',
+    url: 'https://proxy.hxlstandard.org/data.json?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1lLiL-dOWt9rQxCD6bxyAIXUlS9mK0dmA1P-sW637gsI%2Fedit%23gid%3D964805108&force=on',
     dataType: 'json',
 });
 
@@ -39,10 +39,10 @@ function renderHTML(data) {
     var htmlString = "<ul>";
     console.log(data);
     data.forEach(function (c, i) {
-        if (i == 0) {
+        if (i == 0 || i==1) {
 
         } else {
-            htmlString += "<li><p class='acronym'>" +c[1] + "</p><p>" + c[2] + "</p><p>" + c[3] + "<br /><a href='" + c[4] + "'>" + c[4] + "</a></p></li>";
+            htmlString += "<li><p class='acronym'>" + c[1].toUpperCase() + "</p><p>" + capitalizeFirstLetter(c[2]) + "</p><p>" + capitalizeFirstLetter(c[3]) + "<br /><a href='" + c[4] + "'>" + c[4] + "</a></p></li>";
         }
     })
     htmlString += "</ul><p id='not-found' style='display:none'>Acronym not found.<br /><a href='#SendnewAcronym'>Suggest it to us.</a></p>";
@@ -50,6 +50,10 @@ function renderHTML(data) {
     document.getElementById("input").innerHTML = '<input type="text" id="mtagInput" onkeyup="filtering()" placeholder="Type acronym to filter">';
 } /* If there is no Acronym, the text "Create a new one" will displayed therefore didyoufindit != "yes"  */
 
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 document.getElementById("nav").onclick = function showMenu() {
     document.getElementById("overlay").style.display = "";
