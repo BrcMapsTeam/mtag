@@ -3,12 +3,12 @@ var x;
 
 var call = $.ajax({ 
     type: 'GET', 
-    url: 'https://proxy.hxlstandard.org/data.json?force=on&url=https%3A//docs.google.com/spreadsheets/d/1NZZwT%5FJIFthRlsG6QcTyj8wXMKpp2p6WGlKB6K3Gz50/edit%23gid%3D0&strip-headers=on&force=on',
+    url: 'https://proxy.hxlstandard.org/data.json?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1lLiL-dOWt9rQxCD6bxyAIXUlS9mK0dmA1P-sW637gsI%2Fedit%23gid%3D964805108&force=on',
     dataType: 'json',
 });
 
 
-$.when(call).then(function(a){
+$.when(call).then(function (a) {
     data = JSON.parse(call.responseText);
     renderHTML(data);
 });
@@ -19,15 +19,16 @@ function filtering() {
     var numberofdefinition = 0; /* Amount of same definition */
     var definition = []; /* Result array */
     x = document.getElementById("mtagInput");
+    // Get all li tags
     li = document.getElementsByTagName("li");
     x = x.value.toUpperCase();
-    for (i = 1; i < data.length; i++) {
-            if (data[i][1].toUpperCase().indexOf(x) > -1) {
+    for (i = 2; i < data.length; i++) {
+        if (data[i][1].toUpperCase().indexOf(x) > -1) {
                 didyoufindit = "yes";
-                li[i-1].style.display = "";
+                li[i - 2].style.display = "";
                 document.getElementById("not-found").style.display = "none";
             } else {
-                li[i-1].style.display = "none";
+                li[i-2].style.display = "none";
             }
         }
     if (didyoufindit != "yes") {
@@ -37,12 +38,11 @@ function filtering() {
 
 function renderHTML(data) {
     var htmlString = "<ul>";
-    console.log(data);
     data.forEach(function (c, i) {
-        if (i == 0) {
+        if (i == 0 || i == 1) {
 
         } else {
-            htmlString += "<li><p class='acronym'>" +c[1] + "</p><p>" + c[2] + "</p><p>" + c[3] + "<br /><a href='" + c[4] + "'>" + c[4] + "</a></p></li>";
+            htmlString += "<li><p class='acronym'>" + c[1].toUpperCase() + "</p><p>" + capitalizeFirstLetter(c[2]) + "</p><p>" + capitalizeFirstLetter(c[3]) + "<br /><a href='" + c[4] + "'>" + c[4] + "</a></p></li>";
         }
     })
     htmlString += "</ul><p id='not-found' style='display:none'>Acronym not found.<br /><a href='#SendnewAcronym'>Suggest it to us.</a></p>";
@@ -50,6 +50,10 @@ function renderHTML(data) {
     document.getElementById("input").innerHTML = '<input type="text" id="mtagInput" onkeyup="filtering()" placeholder="Type acronym to filter">';
 } /* If there is no Acronym, the text "Create a new one" will displayed therefore didyoufindit != "yes"  */
 
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
 document.getElementById("nav").onclick = function showMenu() {
     document.getElementById("overlay").style.display = "";
