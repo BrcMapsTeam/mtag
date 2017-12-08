@@ -3,7 +3,7 @@ var x;
 
 var call = $.ajax({
     type: 'GET',
-    url: 'https://proxy.hxlstandard.org/data.json?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1lLiL-dOWt9rQxCD6bxyAIXUlS9mK0dmA1P-sW637gsI%2Fedit%23gid%3D964805108',
+    url: 'https://proxy.hxlstandard.org/data.json?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1lLiL-dOWt9rQxCD6bxyAIXUlS9mK0dmA1P-sW637gsI%2Fedit%23gid%3D964805108&force=on',
     dataType: 'json',
 	timeout: 3000
 });
@@ -56,6 +56,7 @@ function filtering() {
 
 function renderHTML(data) {
     var htmlString = "<ul>";
+    data = sortingDataAlphabetically(data);
     data.forEach(function (c, i) {
         if (i == 0 || i == 1) {
 
@@ -72,6 +73,24 @@ function renderHTML(data) {
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+
+function sortingDataAlphabetically(data) {
+
+     function Comparator(a, b) {
+       if (a[1].toUpperCase() < b[1].toUpperCase()) return -1;
+       if (a[1].toUpperCase() > b[1].toUpperCase()) return 1;
+       return 0;
+    }
+
+    numberOfHeaders = 2;
+    dataNeeded = data;
+    dataNeeded.splice(0,numberOfHeaders);
+    dataNeeded.sort(Comparator);
+    dataNeeded.splice(0, 0, data[0], data[1]);
+    return dataNeeded;
+}
+
 
 document.getElementById("nav").onclick = function showMenu() {
     document.getElementById("overlay").style.display = "";
