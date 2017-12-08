@@ -1,16 +1,34 @@
 var data;
 var x;
 
-var call = $.ajax({ 
-    type: 'GET', 
-    url: 'https://proxy.hxlstandard.org/data.json?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1lLiL-dOWt9rQxCD6bxyAIXUlS9mK0dmA1P-sW637gsI%2Fedit%23gid%3D964805108&force=on',
+var call = $.ajax({
+    type: 'GET',
+    url: 'https://proxy.hxlstandard.org/data.json?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1lLiL-dOWt9rQxCD6bxyAIXUlS9mK0dmA1P-sW637gsI%2Fedit%23gid%3D964805108',
     dataType: 'json',
+	timeout: 3000
 });
 
-
-$.when(call).then(function (a) {
-    data = JSON.parse(call.responseText);
-    renderHTML(data);
+$.when(call).then(
+//runs when call successful
+    function (a) {
+        data = JSON.parse(call.responseText);
+        renderHTML(data);
+    },
+// will fire when timeout or error is reached
+    function () {
+        console.log("using backup sheet");
+        data = $.ajax({
+            type: 'GET',
+            url: 'data.json',
+            dataType: 'json',
+            error: function () {
+                console.log("Error loading the backup JSON. Please contact https://twitter.com/zibethin about this issue.");
+            },
+            success: function (data) {
+                renderHTML(data);
+            },
+            timeout: 3000 // sets timeout to 3 seconds
+        });
 });
 
 
@@ -28,10 +46,10 @@ function filtering() {
                 li[i - 2].style.display = "";
                 document.getElementById("not-found").style.display = "none";
             } else {
-                li[i-2].style.display = "none";
+                li[i - 2].style.display = "none";
             }
         }
-    if (didyoufindit != "yes") {
+    if (didyoufindit !== "yes") {
         document.getElementById("not-found").style.display = "";/* Create a new one as a text */
     }
 }
@@ -72,7 +90,7 @@ document.getElementById("close-button").onclick = function closeMenu() {
 
 var menuItems = document.getElementsByClassName("menu-item");
 
-[].forEach.call(menuItems, function(c, i){
+[].forEach.call(menuItems, function(c){
     c.onclick = function closeMenu() {
         document.getElementById("overlay").style.display = "none";
         document.getElementById("menu").style.display = "none";
