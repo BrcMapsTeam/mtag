@@ -3,4 +3,4 @@
 Search for acronyms related to the humanitarian world.
 
 Link to the page:
-https://brcmapsteam.github.io/MTAG/
+https://brcmapsteam.github.io/mtag/
