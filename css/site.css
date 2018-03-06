@@ -1,0 +1,188 @@
+﻿body {
+    font-family: 'Khula', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size:16px;
+}
+
+.mtag{
+    padding: 15px 30px 30px 30px;
+}
+
+#mtagInput{
+    text-align: left;
+    max-width: 300px;
+    height: 40px;
+    font-size: 1.1em;
+    border: #ccc solid 2px;
+    border-radius: 2px;
+    background-image: url("../images/searchicon.png");
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding-left: 42px;
+}
+
+#other{
+    padding: 20px;
+}
+
+#reset-btn{
+    height: 50px;
+    width: 80px;
+    border-radius: 3px;
+    border: none;
+    margin: 10px;
+    font-size: 14px;
+}
+
+#showdata{
+    margin: auto;
+    margin-top: 20px;
+    border: #ccc solid 2px;
+    border-radius: 2px;
+    max-height: 500px;
+    width: 90%;
+    max-width: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#showdata ul{
+        max-width: 500px;
+        padding: 0;
+}
+
+h1{
+    font-weight: 300;
+    color: #1f8e89;
+}
+
+.page-title{
+    background-color: #1f8e89;
+    margin: 0;
+    padding: 0.5em;
+}
+
+.page-title h1{
+    color: white;
+    margin:10px;
+    letter-spacing: 15px;
+}
+
+ul{
+    list-style-type:none;
+    text-align:center;
+    margin: auto;
+}
+
+nav div{
+    padding: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.acronym{
+    color: white;
+    background-color: #4f4f4f;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+}
+
+#not-found{
+    line-height: 2em;
+}
+
+#not-found a{
+    padding: 10px;
+}
+
+iframe{
+    width: 90%;
+    max-width: 900px;
+    height: 700px;
+    border-radius: 2px;
+}
+
+footer{
+    padding: 50px;
+}
+
+#nav svg{
+    position: absolute;
+    top:15px;
+    right:20px;
+    height:40px;
+    width:40px;
+}
+
+#menu{
+    position: fixed;
+    text-align:center;
+    height:80%;
+    width:80%;
+    top:10%;
+    left:10%;
+    background-color: white;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+#menu div:first-child{
+    padding-top: 15%;
+}
+
+#menu svg{
+    position: absolute;
+    height:40px;
+    width:40px;
+    top:15px;
+    right:20px;
+    z-index:15;
+}
+
+#overlay{
+    position: fixed;
+    text-align:center;
+    height:100%;
+    width:100%;
+    top:0;
+    left:0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 5;
+}
+
+.st0 {
+    fill: none;
+    stroke: #FFFFFF;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+}
+
+.st1 {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-miterlimit: 10;
+}
+
+.menu-item{
+    font-size: 20px;
+    padding: 30px;
+}
+
+.menu-item:hover{
+    color:black;
+}
+
+@media only screen and (min-width: 780px) {
+    body {
+        font-size:14px;
+    }
+}
