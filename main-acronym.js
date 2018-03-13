@@ -17,7 +17,7 @@ $.when(call).then(
 // will fire when timeout or error is reached
     function () {
         console.log("using backup sheet");
-        data = $.ajax({
+        call2 = $.ajax({
             type: 'GET',
             url: 'data.json',
             dataType: 'json',
@@ -29,6 +29,14 @@ $.when(call).then(
             },
             timeout: 3000 // sets timeout to 3 seconds
         });
+
+        // runs when call to backup spreadsheet is successful
+        $.when(call2).then(
+            function (a) {
+                data = JSON.parse(call2.responseText);
+                renderHTML(data);
+            }
+        );
 });
 
 
