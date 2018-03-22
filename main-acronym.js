@@ -13,18 +13,19 @@ var call = $.ajax({
 
 var categoryCall = $.ajax({
     type: 'GET',
-    url: 'https://proxy.hxlstandard.org/data.json?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1lLiL-dOWt9rQxCD6bxyAIXUlS9mK0dmA1P-sW637gsI%2Fedit%23gid%3D964805108&force=on',
+    url: 'https://proxy.hxlstandard.org/data.json?strip-headers=on&url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1lLiL-dOWt9rQxCD6bxyAIXUlS9mK0dmA1P-sW637gsI%2Fedit%23gid%3D107500224&force=on',
     dataType: 'json',
 	timeout: 3000
 });
 
 // ----------------- Call managements ------------------
 
-$.when(call).then(
+$.when(call,categoryCall).then(
 //runs when call successful
     function (a) {
         data = JSON.parse(call.responseText);
         renderHTML(data);
+        console.log(categoryCall.responseText);
     },
 // will fire when timeout or error is reached
     function () {
