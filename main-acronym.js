@@ -1,12 +1,24 @@
 var data;
 var x;
 
+
+// ----------------- AJAX calls ------------------
+
 var call = $.ajax({
     type: 'GET',
     url: 'https://proxy.hxlstandard.org/data.json?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1lLiL-dOWt9rQxCD6bxyAIXUlS9mK0dmA1P-sW637gsI%2Fedit%23gid%3D964805108&force=on',
     dataType: 'json',
 	timeout: 3000
 });
+
+var categoryCall = $.ajax({
+    type: 'GET',
+    url: 'https://proxy.hxlstandard.org/data.json?url=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1lLiL-dOWt9rQxCD6bxyAIXUlS9mK0dmA1P-sW637gsI%2Fedit%23gid%3D964805108&force=on',
+    dataType: 'json',
+	timeout: 3000
+});
+
+// ----------------- Call managements ------------------
 
 $.when(call).then(
 //runs when call successful
@@ -38,6 +50,9 @@ $.when(call).then(
             }
         );
 });
+
+
+// ------------------ Main functionality -----------------------
 
 
 function filtering() {
@@ -98,6 +113,9 @@ function sortingDataAlphabetically(data) {
     dataNeeded.splice(0, 0, data[0], data[1]);
     return dataNeeded;
 }
+
+
+// ------------- Menu management ------------------------
 
 
 document.getElementById("nav").onclick = function showMenu() {
